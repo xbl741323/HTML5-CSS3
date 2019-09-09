@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5表单新增的其它属性</title>
+    <style>
+        body {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" id="myForm">
+        <!-- autofocus自动获取焦点 -->
+        <!-- autocomplete:自动提示功能：on:打开 off:关闭 
+        1.必须提交过
+        2.当前添加autocomplete的元素必须有name属性
+        -->
+        用户名：<input type="text" name="userName" placeholder="请输入用户名" autofocus autocomplete="on"><br>
+        <!-- tel并不会实现验证，仅仅是在移动端能够弹出数字键盘 -->
+        <!-- required:必须输入，如果没有输入就会阻止当前数据提交 -->
+        <!-- pattern: 正则表达式验证
+        *： 代表任意个
+        ?: 代表0个或1个
+        +: 代表1个或者多个 
+        -->
+        手机号: <input type="tel" name="tel" required pattern="^(\+86)?1\d{10}$"><br>
+        <!-- multiple可以选择多个文件 -->
+        文件: <input type="file" name="photo" multiple><br>
+        <!-- email:有默认验证 在email中mutiple允许输入多个邮箱地址，以逗号分开 -->
+        邮箱: <input type="email" name="email" multiple><br>
+        <input type="submit" value="提交">
+    </form>
+    <!-- 下面这个表单元素并没有包含在form中：默认情况下该表单元素中的数据不会被提交 -->
+    <!-- form:指定表单id，那么将来在指定id的表单中进行数据提交的时候，也会将当前表单中的数据进行提交 -->
+    地址: <input type="text" name="address" form="myForm">
+
+</body>
+
+</html>
