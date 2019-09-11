@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多媒体标签</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #fff;
+        }
+        vedio{
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- flash插件：安装flash 1.学习flash,增加使用成本 2.苹果设备不支持flash -->
+    <!-- 
+        audio：音频
+        src:播放的音频文件的路径
+        controls:音频播放器的控制面板
+        autoplay:自动播放
+        loop:循环
+     -->
+    <audio controls="controls" autoplay="autoplay" loop="loop">
+       <source src="../Util/audio/a.mp3" type="audio/mp3"></audio>
+    </audio><br>
+    <!-- 
+        video: 视频
+        src:播放的音频文件的路径
+        controls:视频播放器的控制面板
+        autoplay:自动播放
+        loop:循环
+        width:宽度
+        height:高度
+        poster:当视频还没有完全下载，或者用户还没有点击播放前的默认的显示的封面，
+        默认显示第一幅画面
+     -->
+     <!-- 
+        注意事项：当设置宽高的时候，一般情况下只会设置宽度和高度，让其自动的等
+        比例缩放，如果同时设置高度和宽度，那么视频并不会真正的调整到设置的高度，
+        除非设置的的值刚好是等比例的
+     -->
+    <video controls="controls" poster="../Util/img/a.png" width="1000px">
+       <source src="../Util/vedio/a.mp4" type="video/mp4"><source>
+    </video>
+</body>
+
+</html>

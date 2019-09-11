@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单总结案例 </title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        .student-content {
+            width: 300px;
+            height: 600px;
+            border: 1px solid #666;
+            margin: 50px auto;
+        }
+
+        form {
+            padding: 20px;
+            font-size: 15px;
+        }
+
+        input,
+        meter {
+            display: block;
+            width: 260px;
+        }
+
+        input {
+            padding-top: 3px;
+            border: 1px solid #ccc;
+        }
+
+        h3 {
+            margin: 10px 0;
+            margin-left: 110px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="student-content">
+        <h3>学生档案</h3>
+        <form action="">
+            <label for="">姓名：</label>
+            <input type="text" placeholder="请输入用户名"><br>
+            <label for="">手机号码：</label>
+            <input type="tel"><br>
+            <label for="">邮箱地址：</label>
+            <input type="email"><br>
+            <label for="">所属学院：</label>
+            <input type="text" list="collage"><br>
+            <datalist id="collage">
+                <option value="计算机工程学院" label="挺好的"></option>
+                <option value="化学与食品安全" label="挺好的"></option>
+                <option value="车辆工程" label="挺好的"></option>
+            </datalist>
+            <label for="">入学成绩：</label>
+            <input type="number" value="0" max="100" min="0" id="score"><br>
+            <label for="">基础水平:</label>
+            <meter max="100" min="0" high="80" low="40" value="0" id="level"></meter><br>
+            <label for="">入学时间：</label>
+            <input type="date"><br>
+            <label for="">毕业日期：</label>
+            <input type="date"><br>
+            <br><input type="submit" value="提交"><br>
+        </form>
+        <script>
+            window.onload = function () {
+                var score = document.getElementById("score")
+                var level = document.getElementById("level")
+                score.oninput = function () {
+                    level.value = score.value
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
