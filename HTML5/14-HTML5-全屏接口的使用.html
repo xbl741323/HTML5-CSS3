@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全屏接口的使用</title>
+    <style>
+        * {
+            margin: 1px;
+            padding: 0;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        img {
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../Util/img/b.jpg" alt="">
+        <button id="full">全屏</button>
+        <button id="cancelFull">退出全屏</button>
+        <button id="isFull">是否全屏</button>
+    </div>
+    <script>
+        window.onload = function () {
+            var obj = document.querySelector("div");
+            var btn1 = document.getElementById("full");
+            var btn2 = document.getElementById("cancelFull");
+            var btn3 = document.getElementById("isFull");
+
+            btn1.onclick = function () {
+                if (obj.requestFullScreen) {
+                    obj.requestFullScreen();
+                } else if (obj.webkitRequestFullScreen) {
+                    obj.webkitRequestFullScreen()
+                } else if (obj.msRequestFullScreen) {
+                    obj.msRequestFullScreen()
+                } else if (obj.mozRequestFullScreen) {
+                    obj.mozRequestFullScreen()
+                }
+            }
+
+            btn2.onclick = function () {
+                if (document.canceltFullScreen) {
+                    document.cancelFullScreen();
+                } else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen()
+                } else if (document.msCancelFullScreen) {
+                    document.msCancelFullScreen()
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen()
+                }
+            }
+
+            btn3.onclick = function () {
+                if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement || document.mozFullscreenElement) {
+                    alert(true)
+                } else {
+                    alert(false)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

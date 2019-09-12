@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>dom操作</title>
+    <title>类样式操作</title>
     <style>
         * {
             margin: 0;
@@ -41,18 +41,47 @@
 
 <body>
     <ul>
-        <li class="red">前端</li>
+        <li>前端</li>
         <li class="green">java</li>
-        <li class="blue">javascript</li>
+        <li>javascript</li>
         <li class="pink">c++</li>
     </ul>
+    <button>为第1个li标签增加样式</button>
+    <button>为第2个li标签删除样式</button>
+    <button>为第3个li标签切换样式</button>
+    <button>判断第4个li标签是否包含某个样式</button>
     <script>
         window.onload = function () {
             /*
-            querySelector之前学过，这里不深究了
+            HTML5新增的classList中的方法
             */
-            var red = document.querySelector(".red");
-            console.log(red)
+            var aim1 = document.querySelectorAll("li")[0];
+            var aim2 = document.querySelectorAll("li")[1];
+            var aim3 = document.querySelectorAll("li")[2];
+            var aim4 = document.querySelectorAll("li")[3];
+
+            var btn1 = document.querySelectorAll("button")[0];
+            var btn2 = document.querySelectorAll("button")[1];
+            var btn3 = document.querySelectorAll("button")[2];
+            var btn4 = document.querySelectorAll("button")[3];
+
+            btn1.onclick = function () {
+                aim1.classList.add("red");
+            }
+
+            btn2.onclick = function () {
+                aim2.classList.remove("green");
+            }
+
+            btn3.onclick = function () {
+                aim3.classList.toggle("blue");
+            }
+
+            btn4.onclick = function () {
+                var res = aim4.classList.contains("pink");
+                alert(res)
+            }
+
         }
     </script>
 </body>
