@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>localStorage的使用</title>
+    <style>
+        body {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+      localStorage的使用：存储数据到本地，存储的容量5mb左右。同一浏览器的不同页面可以共享数据，数据只能手动清除
+      setItem(key,value):存储数据，以键值对的方式存储
+      getItem(key):获取数据，通过指定名称的key获取对应的value值
+      removeIten(key):删除数据，通过指定名称key删除对应的值
+      clear()：清空所有存储的内容
+    -->
+    <label for="">数据：</label>
+    <input type="text" id="userName"><br>
+    <input type="button" value="设置数据" id="setData">
+    <input type="button" value="获取数据" id="getData">
+    <input type="button" value="删除数据" id="removeData">
+
+    <script>
+        window.onload = function () {
+            var btn1 = document.querySelector("#setData")
+            var btn2 = document.querySelector("#getData")
+            var btn3 = document.querySelector("#removeData")
+            btn1.onclick = function () {
+                var name = document.querySelector("#userName").value;
+                console.log("数据存储成功！")
+                localStorage.setItem("name", name);
+            }
+            btn2.onclick = function(){
+               var name =  localStorage.getItem("name");
+               alert(name)
+            }
+            btn3.onclick = function(){
+                localStorage.removeItem("name")
+            }
+        }
+    </script>
+</body>
+
+</html>

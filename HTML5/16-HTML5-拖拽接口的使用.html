@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽接口的使用</title>
+    <style>
+        * {
+            margin: 1px;
+            padding: 0;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        .left {
+            float: left;
+            width: 200px;
+            height: 200px;
+            border: 1px solid orangered;
+        }
+
+        .content {
+            display: block;
+            padding: 5px;
+            background-color: red;
+        }
+
+        .right {
+            float: left;
+            width: 200px;
+            height: 200px;
+            border: 1px solid orangered;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left">
+        <p class="content">试试把我拖拽过去</p>
+    </div>
+    <div class="right">
+
+    </div>
+
+    <script>
+        window.onload = function () {
+            /*
+            ondrag  应用于拖拽元素，整个拖拽过程都会调用
+            ondragstart  应用于拖拽元素，当拖拽开始时调用
+            ondragleave  应用于拖拽元素，当鼠标离开拖拽元素时调用
+            ondragend  应用于拖拽元素，当拖拽结束时调用
+            */
+            var obj = document.querySelector(".content");
+            var right = document.querySelector(".right");
+            var left = document.querySelector(".left");
+            obj.ondragstart = function () {
+                console.log("ondragstart")
+            }
+            obj.ondragend = function () {
+                console.log("ondragend")
+            }
+            obj.ondragleave = function () {
+                console.log("ondragleave")
+            }
+            obj.ondrag = function () {
+                console.log("ondrag")
+            }
+
+            /*
+            ondragenter 应用于目标元素，当拖拽元素进入时调用
+            ondragover  应用于目标元素，当停留在目标元素上时调用
+            ondrop  应用于目标元素，当在目标元素上松开鼠标时调用
+            ondragleave 应用于目标元素，当鼠标离开目标元素时调用
+            */
+            right.ondragenter = function () {
+                console.log("--ondragenter")
+            }
+            right.ondragover = function (e) {
+                console.log("--ondragover")
+                e.preventDefault();
+            }
+            right.ondrop = function () {
+                console.log("--ondrop")
+                right.appendChild(obj)
+            }
+            right.ondragleave = function () {
+                console.log("--ondragleave")
+            }
+            /**/
+            left.ondragenter = function () {
+                console.log("--ondragenter")
+            }
+            left.ondragover = function (e) {
+                console.log("--ondragover")
+                e.preventDefault();
+            }
+            left.ondrop = function () {
+                console.log("--ondrop")
+                left.appendChild(obj)
+            }
+            left.ondragleave = function () {
+                console.log("--ondragleave")
+            }
+        }
+    </script>
+</body>
+
+</html>

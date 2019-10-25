@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex布局</title>
+    <style>
+        * {
+            margin: 1px;
+            padding: 0;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        .wrapper {
+            display: flex;
+            /*设置子元素的主轴方向上的排列方式*/
+            justify-content: space-around;
+            /*flex-wrap:控制子元素是否换行显示，默认不换行
+                 nowrap:不换行--则收缩
+                 wrap:换行
+                 wrap-reverse:翻转，原来是从上到下，反转后就是从下往上排列
+            */
+            /*flex-direction:设置子元素的排列方向：默认主轴方向是row,从上往下排列就是column*/
+            border: 1px solid #666;
+            /*
+               flex-wrap和flex-direction的集合
+            */
+            flex-flow: row wrap;
+        }
+
+        .wrapper span {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /*flex-grow:可以用来扩展子元素的宽度；设置当前元素应该占据剩余空间的比例值
+            比例值计算：当前空间的flex-grow/所有兄弟元素的的flex-grow的和flex-grow的
+            默认值为0
+            */
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+</body>
+
+</html>
