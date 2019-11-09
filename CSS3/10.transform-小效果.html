@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            background: url(../Util/img/b.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        .content {
+            width: 200px;
+            height: 300px;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -100px;
+        }
+
+        .content>img {
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transition: transform 1s;
+            transform-origin: left top;
+            border-radius: 10px;
+        }
+
+        .content>img:nth-child(1) {
+            background-color: blue;
+        }
+
+        .content>img:nth-child(2) {
+            background-color: pink;
+        }
+
+        .content>img:nth-child(3) {
+            background-color: yellow;
+        }
+
+        .content>img:nth-child(4) {
+            background-color: rebeccapurple;
+        }
+
+        .content>img:nth-child(5) {
+            background-color: gray;
+        }
+
+        .content>img:nth-child(6) {
+            background-color: black;
+        }
+
+        .content:hover>img:nth-child(1) {
+            transform: rotate(60deg);
+            background-color: blue;
+        }
+
+        .content:hover>img:nth-child(2) {
+            transform: rotate(120deg);
+            background-color: pink;
+        }
+
+        .content:hover>img:nth-child(3) {
+            transform: rotate(180deg);
+            background-color: yellow;
+        }
+
+        .content:hover>img:nth-child(4) {
+            transform: rotate(240deg);
+            background-color: rebeccapurple;
+        }
+
+        .content:hover>img:nth-child(5) {
+            transform: rotate(300deg);
+            background-color: gray;
+        }
+
+        .content:hover>img:nth-child(6) {
+            transform: rotate(360deg);
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572954993110&di=6e9a21b88054d0a64ac44d848271603e&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201608%2F10%2F20160810233754_JwfFr.jpeg">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572955218887&di=b774c999eeaab4629889a651c82e56d6&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201704%2F22%2F20170422150951_H2PN4.jpeg" alt="">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572955288067&di=e0aaf3015b3afa0f5cf29a3da9c1b394&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F44617c9472dd044ba86742e6898cfc6cda51ff17daad0-mJH9hE_fw658" alt="">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572955262885&di=953689342c42a7d476086ecd9de70735&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201805%2F25%2F20180525190548_olnha.jpg" alt="">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572955173025&di=6ebe710fddc467b5a3d970b23bedbee3&imgtype=0&src=http%3A%2F%2Fpic31.nipic.com%2F20130729%2F12095453_193754567000_2.png" alt="">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572955082283&di=1c5a4d0fd36a9add93d22b7267f826b4&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F886c8135be59013f4b55df74306426288f6ae60b1f0171-9ld1e8_fw658" alt="">
+    </div>
+
+
+</body>
+
+</html>

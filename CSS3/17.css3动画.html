@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #fff;
+        }
+
+        .content {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 添加动画效果 */
+            /* 1.animate-name指定动画名称 */
+            animation-name: moveTest;
+            /* 2.设定动画的总耗时 */
+            animation-duration: 2s; 
+            /* 设置动画的播放次数，默认是1次，infinete可以设置无数次 */
+            animation-iteration-count: 1;
+            /* 设置交替动画 alternate 来回交替 */
+            animation-direction: alternate;
+            /* 设置动画的延迟时间 */
+            animation-delay: 2s;
+            /* 设置动画的结束时的状态，默认是动画结束以后回到初始状态 
+            forwards  保持动画结束时的状态，在有延迟的状态下并不会立即进入动画的初始状态
+            backwards  不会保持动画的结束状态，如果动画有初始状态，会立即执行初始状态(前提是设置了延迟)
+            both  既会保持动画的结束状态，也会立即进入动画的初始状态
+            */
+            animation-fill-mode: both;
+            /* 动画的时间函数 */
+            animation-timing-function: ease;
+            /* 设置动画的播放状态 paused暂停 running播放 */
+            animation-play-state: paused;
+        }
+
+        /* 3.创建动画 */
+        @keyframes moveTest {
+
+            /* 百分比是指整个动画耗时的百分比 */
+            from {
+                transform: translate(0, 0) rotate(45deg);
+            }
+
+            50% {
+                transform: translate(200px, 100px);
+            }
+
+            to {
+                transform: translate(200px, 200px);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+
+    </div>
+    <button class="btn1">暂停</button>
+    <button class="btn2">播放</button>
+<script>
+     window.onload = function(){
+         var btn1 = document.querySelector(".btn1")
+         var btn2 = document.querySelector(".btn2")
+         var aim = document.querySelector(".content")
+         btn1.onclick = function(){
+             aim.style.animationPlayState = "paused";
+         }
+         btn2.onclick = function(){
+             aim.style.animationPlayState = "running";
+         }
+     }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #fff;
+        }
+
+        @font-face {
+            font-family: 'iconfont';
+            src: url('../Util/font/iconfont.eot');
+            src: url('../Util/font/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('../Util/font/iconfont.woff2') format('woff2'),
+                url('../Util/font/iconfont.woff') format('woff'),
+                url('../Util/font/iconfont.ttf') format('truetype'),
+                url('../Util/font/iconfont.svg#iconfont') format('svg');
+        }
+
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 100px;
+            color: yellow;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* 新版本的浏览器中单:和双:都会被解析成双: */
+        .cart-full::before {
+            content: "\e6eb";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="iconfont cart-full"></div>
+
+</body>
+
+</html>
